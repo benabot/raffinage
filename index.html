@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animation Parallaxe des Nombres - Victoire & Décompte</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Écran de décompte (invisible par défaut) -->
+    <div id="countdownOverlay" style="display: none;">
+      <div id="countdownText">3</div>
+    </div>
+
+    <!-- Conteneur de démarrage -->
+    <div id="startContainer">
+      <!-- Encart explicatif sur les nombres premiers -->
+      <div id="primeExplanation" style="text-align: center; margin-bottom: 20px; background: #fff; padding: 15px; border: 1px solid #ccc; border-radius: 8px; width: 80%;">
+        <p>1. Les nombres premiers sont des entiers naturels supérieurs à 1.</p>
+        <p>2. Ils ne possèdent que deux diviseurs : 1 et eux-mêmes.</p>
+        <p>3. Par exemple, 2 est premier car il n'est divisible que par 1 et 2.</p>
+        <p>4. De même, 3 est premier (divisible seulement par 1 et 3).</p>
+        <p>5. En revanche, 4 n'est pas premier puisqu'il est divisible par 1, 2 et 4.</p>
+        <p>6. Les nombres premiers sont fondamentaux en mathématiques.</p>
+        <p>7. Ils interviennent dans des domaines comme la cryptographie.</p>
+        <p>8. Parmi d'autres exemples, on trouve 5, 7, 11, 13 et 17.</p>
+        <p>9. Leur répartition sur la droite des nombres est irrégulière.</p>
+        <p>10. Comprendre les nombres premiers aide à appréhender de nombreux concepts scientifiques.</p>
+      </div>
+      <button id="startButton">raffine</button>
+      <div id="configPanel">
+        <h2>Configuration</h2>
+        <label>Vitesse d'affichage (ms) :
+          <input type="number" id="displaySpeed" value="200">
+        </label>
+        <label>Durée du minuteur (sec) :
+          <input type="number" id="timerDuration" value="60">
+        </label>
+        <label>Nom d'utilisateur :
+          <input type="text" id="username" value="Player">
+        </label>
+        <label>Nombre de nombres non premiers :
+          <select id="maxNonPrime">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50" selected>50</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <!-- Conteneur du jeu -->
+    <div id="container">
+      <div id="dropZone"></div>
+    </div>
+
+    <!-- Zone Score / Timer / Username -->
+    <div id="scoreContainer">
+      <div id="usernameDisplay"></div>
+      <div id="score">score : 0</div>
+      <div id="timer">Temps restant : 0</div>
+    </div>
+
+    <!-- Overlay de fin de jeu -->
+    <div id="gameOverOverlay">
+      <h1>GAME OVER</h1>
+      <div id="gameOverDetails"></div>
+      <br>
+      <button id="replayButton">Rejouer</button>
+    </div>
+
+    <!-- Import du module principal -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
